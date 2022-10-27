@@ -1,5 +1,9 @@
 import React from "react";
 import icon from "../assets/sharebutton.svg";
+import github from "../assets/Icon.svg";
+import slack from "../assets/slack.png";
+import myLinks from "../components/data";
+import Links from "../components/Links";
 
 const Home = () => {
   return (
@@ -14,17 +18,16 @@ const Home = () => {
         <h2 className="text-[18px] leading-7 text-gray-900 text-center font-bold mt-6">
           Stephen Adeyemo
         </h2>
-        <div className="mt-8">
-          <p className="bg-[#EAECF0]  h-[68px] border border-gray-200 rounded-[8px] py-6 px-8 mx-4 text-center">
-            <a
-              className="text-gray-900 font-medium text-sm"
-              href="https://twitter.com/Baistevoo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Twitter Link
-            </a>
-          </p>
+        <div>
+          {myLinks.map((link) => (
+            <Links key={link.id} name={link.name} link={link.link} />
+          ))}
+        </div>
+        <div className="flex items-center h-[72px] py-6 mt-8  ">
+          <div className="mx-auto flex gap-[26px]">
+            <img className="w-[24px] h-[24px]" src={slack} alt="" />
+            <img src={github} alt="" />
+          </div>
         </div>
       </div>
     </div>
