@@ -6,14 +6,25 @@ import myLinks from "../components/data";
 import Links from "../components/Links";
 import Footer from "../components/Footer";
 import share from "../assets/Avatar share .svg"
+import Modal from "../components/Modal";
+import { useState } from "react";
 
 const Home = () => {
+
+  const [shareProfile, setShareProfile] = useState(false)
+
+  const handleClick = () => {
+    setShareProfile(!shareProfile)
+  }
+
   return (
     <div className="w-full h-full ">
       <div className="">
         <div className="mt-[-20px] absolute right-0 mr-4 md:mr-[400px]">
-          <img className="md:hidden " src={icon} alt="" />
-          <img className="sm:hidden md:block" src={share} alt="" />
+          <img className="md:hidden " src={icon} alt="" onClick={handleClick}/>
+          <img className="sm:hidden md:block" src={share} alt="" onClick={handleClick}/>
+          {shareProfile && <Modal /> }
+          
         </div>
         <div className="mt-[64px]">
           <img
