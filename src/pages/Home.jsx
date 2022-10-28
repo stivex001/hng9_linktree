@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className="w-full h-full ">
       <div className="">
-        <div className="mt-[-20px] absolute right-0 mr-4 md:mr-[400px]">
+        <div className="mt-[-20px] absolute right-0 mr-4 md:mr-[400px] cursor-pointer">
           <img className="md:hidden " src={icon} alt="" onClick={handleClick}/>
           <img className="sm:hidden md:block" src={share} alt="" onClick={handleClick}/>
           {shareProfile && <Modal /> }
