@@ -44,7 +44,7 @@ const Home = () => {
             <div className="mx-auto flex gap-[26px]">
               <img className="w-[24px] h-[24px]" src={slack} alt="" />
               <a
-                href="https://github.com/stivex001"
+                href="https://github.com/stivex001/hng9_linktree"
                 target="_blank"
                 rel="noreferrer"
               >
