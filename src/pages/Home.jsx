@@ -48,18 +48,18 @@ const Home = () => {
             <div className="mx-auto flex gap-[26px]">
               <img
                 id="slack"
-                className="w-[24px] h-[24px]"
+                className="w-[24px] h-[24px] cursor-pointer"
                 src={slack}
                 alt=""
               />
-              {/* <a href="https://app.slack.com/client/T042F7V19Q8/D048X5M4Y80/rimeto_profile/U0489TYPSH2">
+              <a href="https://app.slack.com/client/T042F7V19Q8/D048X5M4Y80/rimeto_profile/U0489TYPSH2">
                 <img
                   id="slack"
-                  className="w-[24px] h-[24px]"
+                  className="w-[24px] h-[24px] hidden"
                   src={slack}
                   alt=""
                 />
-              </a> */}
+              </a>
 
               <a
                 href="https://github.com/stivex001/hng9_linktree"
