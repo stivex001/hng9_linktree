@@ -1,36 +1,36 @@
 const myLinks = [
     {
-        id: 1,
+        id: 'twitter',
         name: 'Twitter Link',
         link: 'https://twitter.com/Baistevoo',
 
     },
     {
-        id: 2,
+        id: 'btn__zuri',
         name: 'Zuri Team',
         link:"https://training.zuri.team/"
 
     },
     {
-        id: 3,
+        id: 'books',
         name: 'Zuri Books',
         link:"http://books.zuri.team"
 
     },
     {
-        id: 4,
+        id: 'book__python',
         name: 'Python Books',
         link:"https://books.zuri.team/"
 
     },
     {
-        id: 5,
+        id: 'pitch',
         name: 'Background Check for Coders',
         link:"https://background.zuri.team"
 
     },
     {
-        id: 6,
+        id: 'book__design',
         name: 'Design Books',
         link:"https://books.zuri.team/design-rules"
 
