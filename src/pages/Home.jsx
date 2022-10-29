@@ -52,14 +52,14 @@ const Home = () => {
                 src={slack}
                 alt=""
               />
-              <a href="https://app.slack.com/client/T042F7V19Q8/D048X5M4Y80/rimeto_profile/U0489TYPSH2">
+              
                 <img
-                  id="slack"
+                  id="https://app.slack.com/client/T042F7V19Q8/D048X5M4Y80/rimeto_profile/U0489TYPSH2"
                   className="w-[24px] h-[24px] hidden"
                   src={slack}
                   alt=""
                 />
-              </a>
+            
 
               <a
                 href="https://github.com/stivex001/hng9_linktree"
