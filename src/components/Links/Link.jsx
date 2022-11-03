@@ -1,4 +1,5 @@
 import "./link.css";
+import { Link as ContactLink } from "react-router-dom";
 
 const Link = () => {
   const myLinks = [
@@ -40,6 +41,13 @@ const Link = () => {
       subText:
         "Get the best design book that will help you create truly professional designs",
     },
+    // {
+    //   id: "contact Me",
+    //   name: "Contact Me",
+    //   link: "/contact",
+    //   subText:
+    //     "",
+    // },
   ];
   return (
     <div className="links-wrapper">
@@ -62,6 +70,8 @@ const Link = () => {
           </div>
         );
       })}
+      
+      <ContactLink to="/contact">Contact Me</ContactLink>
     </div>
   );
 };
