@@ -1,6 +1,21 @@
-// import { useRef } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  firstName: yup.string().required("Please input your firstname"),
+  lastName: yup.string().required("Please input your lastname"),
+  email: yup.string().email().required("please input your email"),
+  message: yup.string().required("Kindly enter your message"),
+});
 
 const Contact = () => {
+  const { register, handleSubmit, formState: {errors} } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const submitForm = (data) => console.log(data);
+
   return (
     <div className="contact-wrapper">
       <header className="pt-24 px-6 mb-12 max-w-2xxl md:mx-auto">
@@ -10,46 +25,60 @@ const Contact = () => {
         </p>
       </header>
       <section>
-        <form className="px-6 mb-24 max-w-2xxl md:mx-auto">
+        <form
+          onSubmit={handleSubmit(submitForm)}
+          className="px-6 mb-24 max-w-2xxl md:mx-auto"
+        >
           <div className="md:flex md:justify-between">
             <div className="flex flex-col mb-9 md:w-full md:mr-6">
               <label>First name</label>
               <input
+                name="firstName"
+                {...register("firstName", {required: true})}
                 type="text"
                 id="first_name"
                 placeholder="Enter your first name"
                 className="outline-none"
               />
+              <p className="text-red-500 text-sm font-semibold">{errors.firstName?.message}</p>
             </div>
             <div className="flex flex-col mb-9 md:w-full">
               <label>Last name</label>
               <input
+                name="lastName"
+                {...register("lastName", {required: true})}
                 type="text"
                 id="last_name"
                 placeholder="Enter your last name"
                 className="outline-none"
               />
+              <p className="text-red-500 text-sm font-semibold">{errors.lastName?.message}</p>
             </div>
           </div>
           <div className="flex flex-col mb-9">
             <label>Email</label>
             <input
+            name="email"
+            {...register("email", {required: true})}
               type="email"
               id="email"
               placeholder="yourname@gmail.com"
               className="outline-none"
             />
+            <p className="text-red-500 text-sm font-semibold">{errors.email?.message}</p>
           </div>
           <div className="flex flex-col mb-9">
             <label className="text-sm font-medium">Message</label>
             <textarea
               name="message"
+              {...register("message", {required: true})}
               id="message"
               cols="30"
               rows="10"
               placeholder="Send me a message and I'll reply you as soon as possible..."
               className="outline-none"
             ></textarea>
+            <p className="text-red-500 text-sm font-semibold">{errors.message?.message}</p>
           </div>
           <div className="mb-9 flex items-start justify-center">
             <input
