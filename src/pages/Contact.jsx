@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
+
+
 
 const schema = yup.object().shape({
   firstName: yup.string().required("Please input your firstname"),
@@ -9,12 +12,24 @@ const schema = yup.object().shape({
   message: yup.string().required("Kindly enter your message"),
 });
 
+
 const Contact = () => {
-  const { register, handleSubmit, formState: {errors} } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const submitForm = (data) => console.log(data);
+  const navigate = useNavigate()
+  
+  const submitForm = (data) => {
+    navigate('/thankyou', data)
+  }
+
+  
+  
 
   return (
     <div className="contact-wrapper">
@@ -34,51 +49,59 @@ const Contact = () => {
               <label>First name</label>
               <input
                 name="firstName"
-                {...register("firstName", {required: true})}
+                {...register("firstName", { required: true })}
                 type="text"
                 id="first_name"
                 placeholder="Enter your first name"
                 className="outline-none"
               />
-              <p className="text-red-500 text-sm font-semibold">{errors.firstName?.message}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.firstName?.message}
+              </p>
             </div>
             <div className="flex flex-col mb-9 md:w-full">
               <label>Last name</label>
               <input
                 name="lastName"
-                {...register("lastName", {required: true})}
+                {...register("lastName", { required: true })}
                 type="text"
                 id="last_name"
                 placeholder="Enter your last name"
                 className="outline-none"
               />
-              <p className="text-red-500 text-sm font-semibold">{errors.lastName?.message}</p>
+              <p className="text-red-500 text-sm font-semibold">
+                {errors.lastName?.message}
+              </p>
             </div>
           </div>
           <div className="flex flex-col mb-9">
             <label>Email</label>
             <input
-            name="email"
-            {...register("email", {required: true})}
+              name="email"
+              {...register("email", { required: true })}
               type="email"
               id="email"
               placeholder="yourname@gmail.com"
               className="outline-none"
             />
-            <p className="text-red-500 text-sm font-semibold">{errors.email?.message}</p>
+            <p className="text-red-500 text-sm font-semibold">
+              {errors.email?.message}
+            </p>
           </div>
           <div className="flex flex-col mb-9">
             <label className="text-sm font-medium">Message</label>
             <textarea
               name="message"
-              {...register("message", {required: true})}
+              {...register("message", { required: true })}
               id="message"
               cols="30"
               rows="10"
               placeholder="Send me a message and I'll reply you as soon as possible..."
               className="outline-none"
             ></textarea>
-            <p className="text-red-500 text-sm font-semibold">{errors.message?.message}</p>
+            <p className="text-red-500 text-sm font-semibold">
+              {errors.message?.message}
+            </p>
           </div>
           <div className="mb-9 flex items-start justify-center">
             <input
@@ -93,13 +116,13 @@ const Contact = () => {
             </p>
           </div>
           <div>
-            <button
-              className="bg-blue-750 border border-blue-750 font-semibold text-base h-12 w-full text-white rounded-xl hover:scale-105 duration-200 hover:bg-[#B2DDFF]"
-              id="btn__submit"
-              type="submit"
-            >
-              Send message
-            </button>
+              <button
+                className="bg-blue-750 border border-blue-750 font-semibold text-base h-12 w-full text-white rounded-xl hover:scale-105 duration-200 hover:bg-[#B2DDFF]"
+                id="btn__submit"
+                type="submit"
+              >
+                Send message
+              </button>
           </div>
         </form>
       </section>
