@@ -53,7 +53,7 @@ const Contact = () => {
                 type="text"
                 id="first_name"
                 placeholder="Enter your first name"
-                className="outline-none"
+                className="outline-[#84CAFF]"
               />
               <p className="text-red-500 text-sm font-semibold">
                 {errors.firstName?.message}
@@ -67,7 +67,7 @@ const Contact = () => {
                 type="text"
                 id="last_name"
                 placeholder="Enter your last name"
-                className="outline-none"
+                className="outline-[#84CAFF]"
               />
               <p className="text-red-500 text-sm font-semibold">
                 {errors.lastName?.message}
@@ -82,7 +82,7 @@ const Contact = () => {
               type="email"
               id="email"
               placeholder="yourname@gmail.com"
-              className="outline-none"
+              className="outline-[#84CAFF]"
             />
             <p className="text-red-500 text-sm font-semibold">
               {errors.email?.message}
@@ -97,7 +97,7 @@ const Contact = () => {
               cols="30"
               rows="10"
               placeholder="Send me a message and I'll reply you as soon as possible..."
-              className="outline-none"
+              className="outline-[#84CAFF]"
             ></textarea>
             <p className="text-red-500 text-sm font-semibold">
               {errors.message?.message}
