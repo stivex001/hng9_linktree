@@ -46,7 +46,7 @@ const Contact = () => {
         >
           <div className="md:flex md:justify-between">
             <div className="flex flex-col mb-9 md:w-full md:mr-6">
-              <label>First name</label>
+              <label htmlFor="firstname">First name</label>
               <input
                 name="firstName"
                 {...register("firstName", { required: true })}
@@ -60,7 +60,7 @@ const Contact = () => {
               </p>
             </div>
             <div className="flex flex-col mb-9 md:w-full">
-              <label>Last name</label>
+              <label htmlFor="lastName">Last name</label>
               <input
                 name="lastName"
                 {...register("lastName", { required: true })}
@@ -75,7 +75,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col mb-9">
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
               name="email"
               {...register("email", { required: true })}
@@ -89,7 +89,7 @@ const Contact = () => {
             </p>
           </div>
           <div className="flex flex-col mb-9">
-            <label className="text-sm font-medium">Message</label>
+            <label htmlFor="message" className="text-sm font-medium">Message</label>
             <textarea
               name="message"
               {...register("message", { required: true })}
@@ -110,10 +110,10 @@ const Contact = () => {
               id="agree"
               className="mt-1 border"
             />
-            <p className="text-sm ml-3">
+            <label htmlFor="checkbox_agree" className="text-sm ml-3">
               You agree to providing your data to Stephen Adeyemo who may
               contact you.
-            </p>
+            </label>
           </div>
           <div>
               <button
