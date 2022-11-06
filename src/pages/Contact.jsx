@@ -46,7 +46,7 @@ const Contact = () => {
         >
           <div className="md:flex md:justify-between">
             <div className="flex flex-col mb-9 md:w-full md:mr-6">
-              <label htmlFor="firstname">First name</label>
+              <label htmlFor="firstName">First name</label>
               <input
                 name="firstName"
                 {...register("firstName", { required: true })}
