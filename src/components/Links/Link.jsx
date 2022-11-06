@@ -29,7 +29,7 @@ const Link = () => {
         );
       })}
 
-      <ContactLink to="/contact" className="btn__link">Contact Me</ContactLink>
+      <ContactLink to="/contact" className="btn__link" id="contact">Contact Me</ContactLink>
     </div>
   );
 };
